@@ -8,7 +8,7 @@ package main
 
 import (
 	"fmt"
-	"myexp/throttle"
+	"throttle"
 	"time"
 )
 
@@ -16,7 +16,7 @@ func greetings(msg string) {
 	fmt.Printf("%v \t ", msg)
 }
 func main() {
-	//quit := make(chan int)
+	//Initialize throttle to trigger 5 events and delay after 5 events is 500 milliseconds
 	t := throttle.Init(5, time.Millisecond*500)
 	t.Start()
 
